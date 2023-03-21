@@ -213,22 +213,39 @@ namespace Exercicios_Lista_Um
 
     public class exercicio8
     {
-        public void decrescente()
+              public void decrescente()
         {
-            int A;
-            int B;
-            int C;
+            
 
-            Console.WriteLine("Digite o valor de A");
-            A = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Digite o valor de B");
-            B = Convert.ToInt32(Console.ReadLine());
+            int[] arr = new int[3];
 
-            Console.WriteLine("Digite o valor de C");
-            C = Convert.ToInt32(Console.ReadLine());
+            var valor = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
 
-            int[] arr = new int[] { A, B, C };
+                Console.WriteLine("Digite um número");
+                valor = int.Parse(Console.ReadLine());
+
+
+                if (!arr.Contains (valor)) {
+                   
+                    arr[i] = valor;
+                } else
+                {
+                    int number;
+                    do
+                    {
+
+                        Console.WriteLine("Número repetido, corrija: ");
+                        number = int.Parse(Console.ReadLine());
+                    } while (arr.Contains(number));
+                    arr[i] = number;
+                }
+
+
+
+            }
 
             Array.Sort(arr);
             Array.Reverse(arr);
